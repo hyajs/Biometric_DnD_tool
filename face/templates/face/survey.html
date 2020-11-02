@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{%static 'css_file/survey_style.css'%}" />
+</head>
+<body>
+<div class="survey">
+    <form method="POST" enctype="multipart/form-data"> {%csrf_token%}
+    {{form.as_p}}
+    <p style="font-weight:bold">Due to the network issues, you may need to wait up to two minutes for system to generate results.</p>
+    <input type="submit" name="submit" value="submit"/>
+
+    </form>
+</div>
+<div >
+
+     <button style="display:block;margin:0 auto" onclick="notify()">instruction</button>
+     <br>
+</div>
+<div class="photos">
+
+    <input type="button" title="turn_on_camera" value="turn on camera" onclick="getMedia()" />
+    <button id="snap" onclick="takePhoto()">take a photo</button>
+    <button id="download" onclick="download()">download your photo</button>
+</div>
+<div class="vid">
+    <li><video id="video" width="300px" height="300px" autoplay="autoplay"></video></li>
+    <li><canvas id="canvas" width="300px" height="300px"></canvas></li>
+</div>
+
+<script>
+
+let video = document.getElementById("video");
+function getMedia() {
+    let constraints = {
+        video: {width: 500, height: 500},
+        audio: false
+    };
+    let promise = navigator.mediaDevices.getUserMedia(constraints);
+    promise.then(function (MediaStream) {
+        video.srcObject = MediaStream;
+        video.play();
+    }).catch(function (PermissionDeniedError) {
+        console.log(PermissionDeniedError);
+    })
+}
+function takePhoto() {
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, 500, 500);
+}
+
+function download(){
+    if (window.navigator.msSaveBlob){
+        window.navigator.msSaveBlob(canvas.msToBlob,"selfie.jpg");
+    }else{
+        const a = document.createElement("a");
+
+        document.body.appendChild(a);
+        a.href = canvas.toDataURL("image/jpg");
+        a.download = "selfie.jpg";
+        console.log(a)
+        a.click();
+        document.body.removeChild(a)
+    }
+}
+function notify() {
+  alert("Your image has to be under 10mb and its name cannot have space or underscore");
+}
+</script>
+</body>
+</html>

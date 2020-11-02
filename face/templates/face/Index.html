@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>index</title>
+		<meta charset="utf-8" />
+		<link type="text/css" rel="stylesheet" href="{%static 'css_file/index_style.css'%}" />
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- header -->
+		<div class="header"><a>Biometric Dungeons and Dragons project tool</a></div>
+
+		<!-- Main -->
+			<div class="content">
+				<p>This is a University of Melbourne research project that aims to explore how facial recognition is able to enhance the gaming experience of Dungeons and Dragons (D&D). We are researching a tool that personalizes a game character's unique attributes by using a photo of the player.</p>
+				<p>If you continue, you will be asked about what sort of character you like to play. We will also ask you to upload a photo of yourself, which will be used to develop your custom D&D character. We will keep your photo and the generated character information as part of our research. Please be aware that we will never share your photo and survey results with anyone else. </p>
+				<p>By clicking "Start the tool!", you consent to participate in this study, as agreed in the attached <a href="static\MScConsent.pdf">Consent form</a> and <a href="static\MScPLS.pdf">Plain language Statement</a>. Please note that you must be at least 18 years old to participate. </p>
+
+				<a href="survey/"><button>Start the tool!</button></a>
+			</div>
+		    <div class="share">
+        <ul>
+            <li><a href="http://twitter.com/share?text=Generate D%26DD attributes based on your photo! Come check this out&url=https://hyajs.top"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/share.php?u=https://hyajs.top&quote=Generate D%26DD attributes based on your photo!  Come check this out"><i class="icon-facebook"></i></a></li>
+        </ul>
+    </div>
+
+		<!-- Footer -->
+		<div class="footer">
+			<table>
+				<tr>
+					<th>The responsible researchers for this project</th>
+					<th><a href="mailto:melissa.rogerson@unimelb.edu.au?subject=Questions about BM DND project">Melissa Rogerson</a></th>
+					<th><a href="mailto:niels.wouters@unimelb.edu.au?subject=Questions about BM DND project">Niels Wouters</a></th>
+				</tr>
+				<tr>
+					<th>The student researcher</th>
+					<th><a href="mailto:yianh@student.unimelb.edu.au?subject=Questions about BM DND project">Yian Hu</a></th>
+				</tr>
+					<th>You can find out more about this project here</th>
+					<th><a href="static\MScPLS.pdf">Plain language Statement</a></th>
+					<th><a href="static\MScConsent.pdf">Consent form</a></th>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

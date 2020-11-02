@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.survey{
+    margin: auto;
+    padding:10px;
+    text-align: center;
+
+}
+.survey label{
+    padding:10px;
+
+}
+
+.survey p{
+    padding:10px;
+
+}
+.survey li{
+    display:inline
+}
+.survey ul{
+    padding:10px;
+
+}
+
+input[name = 'submit']{
+    width: 150px;
+    height:50px;
+    background:#0088cc;
+}
+input[name = 'submit']:hover{
+    background: #A0E6CE;
+    cursor: pointer;
+}
+.instruction{
+    text-align: center;
+}
+.photos{
+    text-align: center;
+}
+
+input[title = 'turn_on_camera'] {
+    width: 150px;
+    height:50px;
+    display:inline-block;
+
+}
+input[title = 'turn_on_camera']:hover{
+    background: #A0E6CE;
+    cursor: pointer;
+}
+
+.photos button{
+    display:inline-block;
+    width: 150px;
+    height: 50px;
+}
+.photos button:hover{
+    background: #A0E6CE;
+    cursor: pointer;
+}
+
+
+.vid{
+    text-align: center;
+}
+.vid li{
+    display:inline
+}
+
+
+

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css_file/result_style.css'%}">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="{%static 'js_file/result.js'%}"></script>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="D%26D attributes based on my photo!" />
+    <meta name="twitter:description" content={{dict}} />
+</head>
+<body>
+        <div class="loader">
+            <img src="{%static 'diagrams/loading.gif'%}" alt="Loading..."/>
+        </div>
+        <div class="results">
+            <h2>Your attributes are below!</h2>
+            {% for key,value in dict.items %}
+            <li>Your {{key}} is {{ value }}</li>
+            {% endfor %}
+        </div>
+        <div class="survey">
+            <p>Please tell us what you think about your character in  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpoWhP1FVkXDKAlXZVogr9ZqzgkR5Y1hOiYRMUMtD-Mvbz-A/viewform?usp=sf_link">this survey</a>.<br />
+    Your feedback is an essential part of this research project, <br />as we aim to improve the Biometric D&D tool <br />and explore how players feel about this method for generating player characters</p>
+
+         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpoWhP1FVkXDKAlXZVogr9ZqzgkR5Y1hOiYRMUMtD-Mvbz-A/viewform?usp=sf_link">
+            <button>Take the survey!</button>
+        </a>
+       </div>
+
+    <div class="share">
+        <ul>
+            <li><a href="http://twitter.com/share?text=I have just found D%26D Attributes based on my photos! Come check this out&url=https://hyajs.top"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/share.php?u=https://hyajs.top&quote=I have just found D%26D Attributes based on my photos! Come check this out"><i class="icon-facebook"></i></a></li>
+            <li><a href="mailto:your_email@mail.com?subject=DnD_attributes&body={{dict}}"><i class="icon-envelope"></i></a></li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
